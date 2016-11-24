@@ -1,0 +1,21 @@
+{
+  "name": "ion-polymer-elements",
+  "authors": [
+    "Liam Wright <liam.wright@ems-internet.co.uk>"
+  ],
+  "description": "A set of polymer elements for building styleguides",
+  "main": ["ion-colour-palette"],
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.7.0"
+  }
+}
