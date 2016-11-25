@@ -33,7 +33,7 @@
       <div style$="background: {{hexValue}}">
       </div>
       <p><span class="uppercase">{{colourName}}</span></p>
-      <p>rgb <span class="uppercase">({{rgbValue}})</span></p>
+      <p>rgb<span class="uppercase">({{rgbValue}})</span></p>
       <p><span class="uppercase">{{hexValue}}</span></p>
       <p>${{colourVariable}}</p>
       <content></content>
@@ -54,12 +54,25 @@
       },
       colourVariable: {
         type: String,
-        value: 'gallery'
+        computed: 'computeToLowerCase(colourName)'
       },
       rgbValue: {
         type: String,
-        value: '237,237,237'
+        computed: 'computeRGBValue(hexValue)'
       }
     },
+    computeRGBValue:function(hexValue) {
+      var hex = hexValue.replace('#', '');
+      var bigint = parseInt(hex, 16);
+      var r = (bigint >> 16) & 255;
+      var g = (bigint >> 8) & 255;
+      var b = bigint & 255;
+
+      return r + "," + g + "," + b;
+    },
+    computeToLowerCase:function(colourName) {
+      var name = colourName.replace(/\W+/g, '-').toLowerCase()
+      return name;
+    }
   });
 </script>
