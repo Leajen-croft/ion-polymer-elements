@@ -4,10 +4,7 @@
 
   <style>
   section {
-    border: 1px solid #cccccc;
-    border-radius: 5px;
     overflow: hidden;
-    padding: 10px 0;
     box-sizing: border-box;
     margin: 10px 0;
   }
@@ -17,9 +14,8 @@
   }
   p {
     color: #666666;
-    padding: 0 10px;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 22px;
   }
   span {
     color: #666666;
@@ -27,12 +23,16 @@
   span.uppercase{
     text-transform: uppercase;
   }
+  span.bold{
+    color: #484847;
+    font-weight: 500;
+  }
   </style>
   <template>
     <section>
       <div style$="background: {{hexValue}}">
       </div>
-      <p><span class="uppercase">{{colourName}}</span></p>
+      <p><span class="uppercase bold">{{colourName}}</span></p>
       <p>rgb<span class="uppercase">({{rgbValue}})</span></p>
       <p><span class="uppercase">{{hexValue}}</span></p>
       <p>${{colourVariable}}</p>
